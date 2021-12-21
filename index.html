@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DiceGame</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--
+* bouton démarrer partie / réinitialiser partie
+* Player 1 / Player 2
+* affichage score total player 1 / affichage score total player 2
+* affichage score current player 1 / affichage score current player 1
+* bouton roll dice
+* bouton hold
+-->
+<div class="mesa">
+  <div class="set">
+    <button class="new-game">NEW GAME</button>
+    <h2>PLAYER 1</h2>
+    <h2>PLAYER 2</h2>
+    <button class="roll-dice">icon 1</button>
+    <span>ROLL DICE</span>
+    <button class="hold">icon 2</button>
+    <span>HOLD</span>
+    <canvas class="dice"></canvas>
+  </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
