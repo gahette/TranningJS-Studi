@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: #000;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.mesa {
+  position: relative;
+  margin: 50px;
+  padding: 10px;
+  background: linear-gradient(160deg, rgb(170, 151, 129) 10%, rgb(119, 70, 40) 100%) no-repeat center;
+}
+
+.set {
+  position: relative;
+  margin: 10px;
+  background: #fff center;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.material-icons {
+  font-size: 2em;
+  color: red;
+  font-weight: 100;
+  vertical-align: center;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player1, .player2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#throw, #send {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  padding-left: 10px;
+  padding-top: 7px;
+}
