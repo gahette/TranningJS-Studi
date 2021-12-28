@@ -32,7 +32,7 @@ main {
     //background: orange;
   }
 
-  #gamer1, #gamer2 {
+  .gamer-1, .gamer-2 {
     padding-top: 150px;
     padding-bottom: 75px;
     height: 100%;
@@ -41,39 +41,41 @@ main {
     box-sizing: border-box;
     //background: pink;
     justify-content: space-between;
-
   }
 }
-#gamer1 {
-  background: pink;
-}
-
-.set {
-  position: absolute;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  font-size: 1.5em;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  //background: beige;
-  z-index: 1;
-
-  .text {
-    padding-left: 10px;
+  .active {
+    background: pink;
   }
 
-  #send {
-    //background: yellow;
-    margin-top: 50px;
-    text-align: center;
-  }
-}
+  .set {
+    position: absolute;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    //background: beige;
+    z-index: 1;
 
+    .text {
+      padding-left: 10px;
+    }
+
+    #send {
+      //background: yellow;
+      margin-top: 50px;
+      text-align: center;
+    }
+  }
 .dice {
+
+}
+
+.winner {
 
 }

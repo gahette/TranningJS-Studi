@@ -1,19 +1,21 @@
-clickNewGAme()
+let num = 0
+let points
+let gamerFlow
+initialize()
 
 
 //*****************************************************************
 // Nom des Joueurs
 //*****************************************************************
 
-let gamePlaying
 let player1
 let player2
 
 function players() {
   player1 = prompt(`Nom joueur 1 ?`)
   player2 = prompt(`Nom joueur 2 ?`)
-  document.getElementById('player1').innerHTML = player1
-  document.getElementById('player2').innerHTML = player2
+  document.querySelector('.player-1').innerHTML = player1
+  document.querySelector('.player-2').innerHTML = player2
 }
 
 players()
@@ -22,12 +24,13 @@ players()
 //*****************************************************************
 // Lancer le dé
 //*****************************************************************
-let gamerFlow
+
 let jet = document.querySelector('#throw')
-let num = 0
 
 
 const lancer = () => {
+  // if (isplaying) {
+
   let dice = Math.floor(Math.random() * 6) + 1
   // document.querySelector('.num')["innerHTML"]
   if (dice !== 1) {
@@ -41,34 +44,39 @@ const lancer = () => {
     console.log('You lose')
   }
 }
+// }
 
 jet.addEventListener('click', lancer)
+
+//*****************************************************************
+// nombre retenu + victoire
+//*****************************************************************
+
+let take = document.querySelector('#send')
+
+const keep = () => {
+
+  points[gamerFlow-1] += num
+
+  document.querySelector('#total-' + gamerFlow).textContent = points[gamerFlow-1]
+
+  if (points[gamerFlow-1] >= 20) {
+    // todo annoncer le vainqueur
+
+    console.log('winner')
+
+  } else {
+    changePlayer()
+  }
+
+}
+take.addEventListener('click', keep)
 
 
 //*****************************************************************
 // joueur suivant
 //*****************************************************************
 
-// const lancer2 = () => {
-//   let dice2 = Math.floor(Math.random() * 6) + 1
-//   document.querySelector('.num')["innerHTML"]
-// if (dice2 !== 1) {
-//   num2 += dice2
-//   console.log(dice2)
-//   console.log(num2)
-//   document.querySelector('#round2').textContent = num2
-//   jet.disabled = true
-// } else {
-//   num2 = 0
-//   document.querySelector('#round2').textContent = num2
-//   jet2.disabled = true
-//   lancer()
-//   joueur suivant ()
-// console.log('You lose')
-// }
-// }
-//
-// jet2.addEventListener('click', lancer2)
 
 function changePlayer() {
   gamerFlow === 1 ? gamerFlow = 2 : gamerFlow = 1
@@ -78,17 +86,23 @@ function changePlayer() {
 
 }
 
+
+let newGame = document.querySelector('.new-game')
+
 //*****************************************************************
 // Initialisation partie
 //*****************************************************************
 
-let newGame = document.querySelector('.new-game')
+function initialize() {
 
-function clickNewGAme() {
-  gamePlaying = true
   num = 0
-  gamerFlow = 0
+  points = [0, 0]
+  gamerFlow = 1
+  // isplaying = true
+
+  document.querySelector('.gamer-1').classList.add('active')
+
 }
 
-newGame.addEventListener('click', clickNewGAme)
+
 
