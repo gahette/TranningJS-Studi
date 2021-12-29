@@ -1,6 +1,9 @@
 let num = 0
 let points
 let gamerFlow
+let images = ['dice-1.png', 'dice-2.png', 'dice-3.png', 'dice-4.png', 'dice-5.png', 'dice-6.png']
+let pic = document.querySelectorAll('img')
+
 initialize()
 
 
@@ -31,6 +34,17 @@ let jet = document.querySelector('#throw')
 const lancer = () => {
   // if (isplaying) {
 
+  // shake les dés
+
+  pic.forEach((die) => {
+    die.classList.add('shake')
+  })
+  setTimeout(() => {
+    pic.forEach((die) => {
+      die.classList.remove('shake')
+    })
+    document.querySelector('#die').setAttribute('src', images[dice - 1])
+  }, 1000)
   let dice = Math.floor(Math.random() * 6) + 1
   // document.querySelector('.num')["innerHTML"]
   if (dice !== 1) {
@@ -38,7 +52,9 @@ const lancer = () => {
     console.log(dice)
     console.log(num)
     document.querySelector('#round-' + gamerFlow).textContent = num
+
   } else {
+
     changePlayer()
     // joueur suivant ()
     console.log('You lose')
@@ -56,11 +72,11 @@ let take = document.querySelector('#send')
 
 const keep = () => {
 
-  points[gamerFlow-1] += num
+  points[gamerFlow - 1] += num
 
-  document.querySelector('#total-' + gamerFlow).textContent = points[gamerFlow-1]
+  document.querySelector('#total-' + gamerFlow).textContent = points[gamerFlow - 1]
 
-  if (points[gamerFlow-1] >= 20) {
+  if (points[gamerFlow - 1] >= 20) {
     // todo annoncer le vainqueur
 
     console.log('winner')
