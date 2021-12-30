@@ -35,7 +35,6 @@ const lancer = () => {
   // if (isplaying) {
 
   // shake les dés
-
   pic.forEach((die) => {
     die.classList.add('shake')
   })
@@ -44,9 +43,9 @@ const lancer = () => {
       die.classList.remove('shake')
     })
     document.querySelector('#die').setAttribute('src', images[dice - 1])
-  }, 1000)
+  }, 100)
   let dice = Math.floor(Math.random() * 6) + 1
-  // document.querySelector('.num')["innerHTML"]
+
   if (dice !== 1) {
     num += dice
     console.log(dice)
@@ -77,8 +76,8 @@ const keep = () => {
   document.querySelector('#total-' + gamerFlow).textContent = points[gamerFlow - 1]
 
   if (points[gamerFlow - 1] >= 20) {
-    // todo annoncer le vainqueur
-
+    document.querySelector('#die').style.display = 'none'
+    document.querySelector('h1').innerHTML = 'The winner is ' + document.querySelector('.player-' + gamerFlow).textContent
     console.log('winner')
 
   } else {
@@ -99,6 +98,8 @@ function changePlayer() {
   num = 0
   document.querySelector('#round-1').textContent = '0'
   document.querySelector('#round-2').textContent = '0'
+  document.querySelector('.gamer-1').classList.toggle('active')
+  document.querySelector('.gamer-2').classList.toggle('active')
 
 }
 

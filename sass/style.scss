@@ -14,6 +14,17 @@ body {
   margin: 5px;
   padding: 15px;
   background: linear-gradient(160deg, rgb(170, 151, 129) 10%, rgb(119, 70, 40) 100%) no-repeat center;
+
+  h1 {
+    position: absolute;
+    margin-top: 30vh;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #484848;
+    letter-spacing: 15px;
+    animation: flash 1.2s linear infinite;
+
+  }
 }
 
 main {
@@ -45,7 +56,7 @@ main {
 }
 
 .active {
-  background: pink;
+  background: green;
 }
 
 .set {
@@ -81,10 +92,6 @@ main {
   height: 200px;
 }
 
-.winner {
-
-}
-
 .shake {
   animation: shake 0.5s infinite;
 }
@@ -99,4 +106,20 @@ main {
   100% {
     transform: rotate(8deg);
   }
+}
+
+@keyframes flash {
+  0% {
+    color: #fff900;
+    text-shadow: 0 0 7px #fff900;
+  }
+  90% {
+    color: #484848;
+    text-shadow: none;
+  }
+  100% {
+    color: #fff900;
+    text-shadow: 0 0 7px #fff900;
+  }
+
 }
