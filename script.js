@@ -17,8 +17,8 @@ let player2
 function players() {
   player1 = prompt(`Nom joueur 1 ?`)
   player2 = prompt(`Nom joueur 2 ?`)
-  document.querySelector('.player-1').innerHTML = player1
-  document.querySelector('.player-2').innerHTML = player2
+  document.querySelector('.player-1').innerHTML = player1.toUpperCase()
+  document.querySelector('.player-2').innerHTML = player2.toUpperCase()
 }
 
 players()

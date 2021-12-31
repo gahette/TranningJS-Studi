@@ -17,8 +17,8 @@ body {
 
   h1 {
     position: absolute;
-    margin-top: 30vh;
-    transform: translateY(-50%);
+    //margin-top: 25vh;
+    //transform: translateY(-50%);
     font-size: 2em;
     color: #484848;
     letter-spacing: 15px;
@@ -36,11 +36,7 @@ main {
 
   section {
     display: flex;
-    //flex-direction: column;
-    //justify-content: space-around;
     align-items: center;
-    //font-size: 2.5em;
-    //background: orange;
   }
 
   .gamer-1, .gamer-2 {
@@ -50,30 +46,60 @@ main {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    //background: pink;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
+.global {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+.player-1, .player-2 {
+  color: #eb4d4d;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+    }
+  #total-1, #total-2 {
+    font-size: 4rem;
+    color: #eb4d4d;
+  }
+}
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #eb4d4d;
+  padding: 10px;
 
+  #round-1, #round-2 {
+    font-size: 2rem;
+    color: #fff;
+  }
+}
 .active {
-  background: green;
+  background: #eeeee4;
+.player-1, .player-2 {
+  color: black;
+}
 }
 
 .set {
   position: absolute;
   padding-top: 100px;
   padding-bottom: 100px;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+
   background-color: transparent;
-  //background: beige;
   z-index: 1;
 
+   }
   .text {
     padding-left: 10px;
   }
@@ -83,13 +109,13 @@ main {
     margin-top: 50px;
     text-align: center;
   }
-}
+
 
 #die {
   border: 2px solid red;
   border-radius: 8px;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 
 .shake {
