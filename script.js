@@ -11,18 +11,14 @@ initialize()
 // Nom des Joueurs
 //*****************************************************************
 
-let player1
-let player2
-
-function players() {
-  player1 = prompt(`Nom joueur 1 ?`)
-  player2 = prompt(`Nom joueur 2 ?`)
-  document.querySelector('.player-1').innerHTML = player1.toUpperCase()
-  document.querySelector('.player-2').innerHTML = player2.toUpperCase()
+let player1 = document.querySelector('.player-1')
+let player2 = document.querySelector('.player-2')
+const fillName = () => {
+  player1.contentEditable = true
+  player2.contentEditable = true
 }
-
-players()
-
+player1.addEventListener('click', fillName)
+player2.addEventListener('click', fillName)
 
 //*****************************************************************
 // Lancer le dé
@@ -32,7 +28,8 @@ let jet = document.querySelector('#throw')
 
 
 const lancer = () => {
-  // if (isplaying) {
+
+  document.querySelector('#die').style.display = 'block'
 
   // shake les dés
   pic.forEach((die) => {
@@ -53,13 +50,11 @@ const lancer = () => {
     document.querySelector('#round-' + gamerFlow).textContent = num
 
   } else {
-
-    changePlayer()
     // joueur suivant ()
-    console.log('You lose')
+    changePlayer()
   }
 }
-// }
+
 
 jet.addEventListener('click', lancer)
 
@@ -78,8 +73,6 @@ const keep = () => {
   if (points[gamerFlow - 1] >= 20) {
     document.querySelector('#die').style.display = 'none'
     document.querySelector('h1').innerHTML = 'The winner is ' + document.querySelector('.player-' + gamerFlow).textContent
-    console.log('winner')
-
   } else {
     changePlayer()
   }
@@ -106,6 +99,7 @@ function changePlayer() {
 
 let newGame = document.querySelector('.new-game')
 
+
 //*****************************************************************
 // Initialisation partie
 //*****************************************************************
@@ -115,11 +109,22 @@ function initialize() {
   num = 0
   points = [0, 0]
   gamerFlow = 1
-  // isplaying = true
+  document.querySelector('.player-1').textContent = 'PLAYER 1'
+  document.querySelector('.player-2').textContent = 'PLAYER 2'
+  document.querySelector('#round-1').textContent = '0'
+  document.querySelector('#round-2').textContent = '0'
+  document.querySelector('#total-1').textContent = '0'
+  document.querySelector('#total-2').textContent = '0'
+
+  document.querySelector('h1').textContent = ''
+  document.querySelector('#die').style.display = 'none'
+  document.querySelector('.gamer-1').classList.remove('active')
+  document.querySelector('.gamer-2').classList.remove('active')
+
 
   document.querySelector('.gamer-1').classList.add('active')
 
 }
 
 
-
+newGame.addEventListener('click', initialize)

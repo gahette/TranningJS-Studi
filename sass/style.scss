@@ -49,21 +49,49 @@ main {
     justify-content: space-around;
   }
 }
-.global {
+
+h2 {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-.player-1, .player-2 {
-  color: #eb4d4d;
-  font-size: 2.5rem;
-  letter-spacing: 3px;
-    }
+  z-index: 1;
+
+
+  .player-1, .player-2 {
+
+    color: #eb4d4d;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+
+
+  }
+
   #total-1, #total-2 {
     font-size: 4rem;
     color: #eb4d4d;
   }
 }
+
+.tooltip {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #fff;
+  background-color: #222;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 12px;
+  transition: opacity .3s, top .5s;
+}
+
+h2:hover .tooltip {
+  top: -50px;
+  opacity: 1;
+}
+
 .round {
   display: flex;
   flex-direction: column;
@@ -77,11 +105,13 @@ main {
     color: #fff;
   }
 }
+
 .active {
   background: #eeeee4;
-.player-1, .player-2 {
-  color: black;
-}
+
+  .player-1, .player-2 {
+    color: black;
+  }
 }
 
 .set {
@@ -99,16 +129,17 @@ main {
   background-color: transparent;
   z-index: 1;
 
-   }
-  .text {
-    padding-left: 10px;
-  }
+}
 
-  #send {
-    //background: yellow;
-    margin-top: 50px;
-    text-align: center;
-  }
+.text {
+  padding-left: 10px;
+}
+
+#send {
+  //background: yellow;
+  margin-top: 50px;
+  text-align: center;
+}
 
 
 #die {
