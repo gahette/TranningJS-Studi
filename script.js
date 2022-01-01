@@ -16,7 +16,7 @@ addEventListener('load',()=> {
 let num = 0
 let points
 let gamerFlow
-let images = ['dice-1.png', 'dice-2.png', 'dice-3.png', 'dice-4.png', 'dice-5.png', 'dice-6.png']
+let images = ['images/dice-1.png', 'images/dice-2.png', 'images/dice-3.png', 'images/dice-4.png', 'images/dice-5.png', 'images/dice-6.png']
 let pic = document.querySelectorAll('img')
 
 initialize()
