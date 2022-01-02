@@ -74,7 +74,13 @@ body {
     color: #484848;
     letter-spacing: 15px;
     animation: flash 1.2s linear infinite;
-
+  }
+  #rules {
+    position: absolute;
+    font-size: 1.5em;
+    z-index: 2;
+    padding-left: 10px;
+    text-decoration: underline;
   }
 }
 

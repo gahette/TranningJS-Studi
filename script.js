@@ -6,7 +6,27 @@ const loader = document.querySelector('.loader')
 addEventListener('load',()=> {
   loader.classList.add('fondu-out')
 })
+//*****************************************************************
+// Règles du jeu
+//*****************************************************************
+let play = document.querySelector('#rules')
 
+const rules = ()=>{
+  alert('Le jeu comprend 2 joueurs sur un seul et même écran.\n' +
+    'Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).\n' +
+    'À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu\'il le souhaite. Le résultat d’un lancer est ajouté au ROUND.\n' +
+    'Lors de son tour, le joueur peut décider à tout moment de:\n' +
+    '- Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le tour de l’autre joueur.\n' +
+    '- Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.\n' +
+    'Le premier joueur qui atteint les 100 points sur global gagne le jeu.')
+}
+play.addEventListener('click',rules)
+play.addEventListener('mouseenter', ()=>{
+  document.querySelector('#rules').style.fontWeight='900'
+})
+play.addEventListener('mouseleave', ()=>{
+  document.querySelector('#rules').style.fontWeight='300'
+})
 //*****************************************************************
 // Place au jeu
 //*****************************************************************
@@ -72,6 +92,12 @@ const lancer = () => {
 
 
 jet.addEventListener('click', lancer)
+jet.addEventListener('mouseenter', ()=>{
+  document.querySelector('#throw').style.fontWeight='900'
+})
+jet.addEventListener('mouseleave',()=>{
+  document.querySelector('#throw').style.fontWeight='300'
+})
 
 //*****************************************************************
 // nombre retenu + victoire
@@ -85,7 +111,7 @@ const keep = () => {
 
   document.querySelector('#total-' + gamerFlow).textContent = points[gamerFlow - 1]
 
-  if (points[gamerFlow - 1] >= 20) {
+  if (points[gamerFlow - 1] >= 100) {
     document.querySelector('#die').style.display = 'none'
     document.querySelector('h1').innerHTML = 'The winner is ' + document.querySelector('.player-' + gamerFlow).textContent
   } else {
@@ -94,7 +120,12 @@ const keep = () => {
 
 }
 take.addEventListener('click', keep)
-
+take.addEventListener('mouseenter', ()=>{
+  document.querySelector('#send').style.fontWeight='900'
+})
+take.addEventListener('mouseleave',()=>{
+  document.querySelector('#send').style.fontWeight='300'
+})
 
 //*****************************************************************
 // joueur suivant
@@ -143,3 +174,9 @@ function initialize() {
 
 
 newGame.addEventListener('click', initialize)
+newGame.addEventListener('mouseenter', ()=>{
+  document.querySelector('.new-game').style.fontWeight='900'
+})
+newGame.addEventListener('mouseleave',()=>{
+  document.querySelector('.new-game').style.fontWeight='300'
+})
